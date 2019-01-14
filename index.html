@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <TABLE cellSpacing=0 cellPadding=2 border=0>
+        <TR>
+            <form name="searchforit" method="get" action="javascript:doSearch()">
+    
+                <script language='javascript'>
+                        function addplus(items) {
+                            var plussed = "";
+                            for (var t = 1; t <= items.length; t++) {
+                                if (items.substring(t - 1, t) == " ") { plussed += "+"; }
+                                else { plussed += items.substring(t - 1, t); }
+                            }
+                            return plussed;
+                        }
+
+                    // Do the Search 
+                    function doSearch() {
+                        var words;
+                        words = document.searchforit.query.value;
+                        var searchitems;
+                        searchitems = addplus(words);
+                        var index;
+                        // obtain the selectedIndex properties from the search engines option for 
+                        index = document.searchforit.service.selectedIndex;
+                        if (index >= 0) {
+                            var site;
+                            site = document.searchforit.service.options[index].value;
+                            site += searchitems;
+
+
+                            if (notEmpty(searchitems)) {
+                                //window.open("","mainWin"); 
+                                window.open(site, "_blank");
+                                //window.location=site; 
+                            }
+                        }
+
+                        else { alert("검색 엔진을 선택하세요."); }
+                    }
+
+                    // Check for empty contents in search searchitems 
+                    function notEmpty(word) {
+                        if (word == "" || word == null) {
+                            self.status = "ENTER SEARCH searchitems";
+                            alert("검색어를 입력하세요.");
+                            document.searchforit.query.focus();
+                            return false;
+                        }
+                        else {
+                            self.status = word + "을(를) 찾고 있습니다.";
+                            return true;
+                        }
+                    }
+
+                    function clearIt() {
+                        document.searchforit.query.value = "";
+                        document.searchforit.query.focus();
+                    }
+
+                    function FocusOn() {
+                        document.searchforit.query.focus();
+                        return;
+                    }
+                </script>
+    
+    
+                <TD align=center>
+    
+                    <select name="service" style="font-size:9pt; BACKGROUND-COLOR:#FFFFFF;height:18px;">
+                        <option value="http://search.yahoo.co.kr/bin/search?p=">+국내검색+</option>
+                        <option value="http://www.google.co.kr/search?q=">구 글</option>
+                        <option value="http://search.naver.com/search.naver?where=nexearch&query=">네 이 버</option>
+                        <option value="http://search.daum.net/cgi-bin/search?q=">다 음</option>
+                        <option value="http://www.dachaja.com/ww/search.cgi?search=">다 찾 아</option>
+                        <option value="http://search.dreamwiz.com/cgi-bin/irs.cgi?so=2&q=">드 림 서 치</option>
+                        <option value="http://search.lycos.co.kr/search/srch_allindex.asp?searchfield=total&query=">라이코스</option>
+                        <option value="http://www.repia.com/cgi-bin/hsearch.cgi?s=9&q=">레 피 야</option>
+                        <option value="http://www.mochanni.com/search.cgi?query=">모 찾 니</option>
+                        <option value="http://www.best-list.com/kr/search/kv.php3?f_gb=be&f_page=0&f_sn=&f_gb0=be&f_w=">베스트리스트</option>
+                        <option value="http://search.simmani.com/cgi-bin/tsearch.cgi?q=">심 마 니</option>
+                        <option value="http://search.yahoo.co.kr/bin/search?p=">야후코리아</option>
+                        <option value="http://www.empas.com/search/all.html?q=">엠 파 스</option>
+                        <option value="http://www.easead.com/Rank_Top/cat_Search.php?field=1&key=">이 제 드</option>
+                        <option value="http://www.altavista.co.kr/search/webcategory.php3?q=">알타비스타</option>
+                        <option value="http://www.ytop.net/search.php3?kword=">와 이 탑</option>
+                        <option value="http://search.nenter.com/all.php?md=all&query_string=">엔 엠 터</option>
+                        <option value="http://webdir.joins.com/LookSmartSearch.jsp?QueryString=">조 인 스</option>
+                        <option value="http://search.chollian.net/cgi-bin/totalsearch.cgi?w=99&q=">천 리 안</option>
+                        <option value="http://search.korea.com/nsearch.php?keyword=">코리아닷컴</option>
+                        <option value="http://www.clickicon.co.kr/search.xscope?t_option=0&searchedit=">클릭 아이콘</option>
+                        <option value="http://www.tomatonet.com/search/search.cgi?perpage=15&etype=directory&search=">토마토
+                            서치</option>
+                        <option value="http://findkr.com/searchweb.asp?key=">파인드코리아</option>
+                        <option value="http://dsearch.hanmir.com/cgi/dirsearch.cgi?TG=1&QR=">한 미 르</option>
+                        <option value="http://search02.hitel.net/~ic/cgi-bin/dirsearch.cgi?QR=">하 이 텔</option>
+                        <option value="http://search.hanafos.com/cgi-bin/search.cgi?q=">하 나 포 스</option>
+                        <option value="http://search.hananet.net/cgi-bin/tsearch.cgi?c=15&wild=&shword=&w=99&q=">하 나 넷</option>
+                        <option value="http://hitkorea.biz/linker/search.php3?kword=">히트코리아</option>
+                        <option value="http://www.heeya.com/switch/search.cgi?bool=그리고&bool=또는&bool=어구&query=">히 야</option>
+                        <option value="http://kil.syshost.com/cgi-bin/search.cgi?query=">한 글 로</option>
+                        <option value="http://www.hurl.co.kr/search.php3?gogo=검색&hurl=">훨서비스</option>
+                        <option value="http://search.msn.co.kr/results.asp?FORM=MSNH&v=1&RS=CHECKED&CY=kr&cp=949&q=">M S N</option>
+                        <option value="http://search.zip.org/bin/search.asp?p=">Zip 검색</option>
+    
+                        <option value="http://eruwa.net/dir/search.asp?keyword="></option>
+                        <option value="http://search.yahoo.com/bin/search?p=">+해외검색+</option>
+                        <option value="http://search.yahoo.com/bin/search?p=">Yahoo</option>
+                        <option value="http://www.altavista.com/cgi-bin/query?pg=q&sc=on&q=">Altavista</option>
+                        <option value="http://search.lycos.com/main/default.asp?lpv=1&loc=searchhp&query=">Lycos</option>
+                        <option value="http://srch.excite.com/d/search/p/excite/?trace=a&search=">Excite</option>
+                        <option value="http://www.google.com/search?q=">Google</option>
+    
+                        <option value="http://eruwa.net/dir/search.asp?keyword="></option>
+                        <option value="http://www.auction.co.kr/search/search.asp?txtCoop=a&SearchType=ItemName&itemname=">중고물품</option>
+                        <option value="http://eruwa.net/dir/search.asp?keyword="></option>
+    
+                        <option value="http://search.yahoo.com/bin/search?p=">+이미지 검색+</option>
+                        <option value="http://imagesearch.naver.com/search.naver?where=image&query=">네이버</option>
+                        <option value="http://asp.repia.com/cgi-bin/nhsearch.cgi?s=30&q=">레피야</option>
+                        <option value="http://www.multibits.co.kr/store/search/search.php?KeyWord=">멀티비츠</option>
+                        <option value="http://www.simbata.co.kr/kor/searchn.php3?word=">심받다</option>
+                        <option value="http://www.ipost.co.kr/search.asp?q=">ipost</option>
+                        <option value="http://www.imagetrip.com/search/checklogin.asp?list=keyword1&search_string=">이미지트립</option>
+                        <option value="http://image.dbkorea.net/imagesearch.html?search=imagesearch&keyfield=title&keyfield2=subject&keyfield3=id&selectpath=&key=">이미지DB</option>
+                        <option value="http://www.imageclick.com/script/search_new.php?updateKeyword=onopt1=AND&search1=&opt2=AND&search2=&license=1&royalty=1&search=">이미지클릭</option>
+                        <option value="http://imagesearch.yahoo.co.kr/cgi-bin/ImgSearch.cgi?query=">야후</option>
+                        <option value="http://pic.com.ne.kr/search/index.php?q=">컴내꺼</option>
+                        <option value="http://dsearch.hanmir.com/search/himgsrch.php?TG=4&DL=12&&QR=">한미르</option>
+                        <option value="http://images.google.com/images?q=">구글</option>
+    
+                        <option value="http://eruwa.net/dir/search.asp?keyword="></option>
+                        <option value="http://tel.hanmir.com/cgi-bin/kt114.cgi?AC=&AD=&DB=0&QR=">+전화번호+</option>
+                        <option value="http://eruwa.net/dir/search.asp?keyword="></option>
+    
+                        <option value="http://www.yes24.com/home/searchend.asp?SID=cy4!Ge!xR58hbAQTTMRVRgCgFICgggx9ndWVzdxa*vNW21g&ptype=m&sortNo=3&WT=all&fword=">+싸운드
+                            검색+</option>
+                        <option value="http://www.yes24.com/home/searchend.asp?SID=cy4!Ge!xR58hbAQTTMRVRgCgFICgggx9ndWVzdxa*vNW21g&ptype=m&sortNo=3&WT=all&fword=">yes24</option>
+                        <option value="http://210.116.114.227/nasearch.nms?findit=9&query=">나 뮤직</option>
+                        <option value="http://soundsearch.naver.com/search.naver?where=sound&query=">네이버</option>
+                        <option value="http://asp.repia.com/cgi-bin/nhsearch.cgi?s=50&q=">레피야</option>
+                        <option value="http://music.bugsmusic.co.kr/search/search.asp?genre=kor&search=songname&searchstring=">벅스뮤직</option>
+                        <option value="http://www.streambox.co.kr/media/new/s_search.asp?FRMD=2&ttl=">스트림박스</option>
+                        <option value="http://search.empas.com/search/avi.html?q=">엠파스</option>
+    
+                        <option value="http://eruwa.net/dir/search.asp?keyword="></option>
+                        <option value="http://asp.repia.com/cgi-bin/nhsearch.cgi?s=70&q=">+동영상검색+</option>
+                        <option value="http://asp.repia.com/cgi-bin/nhsearch.cgi?s=70&q=">레피야 동영상</option>
+                        <option value="http://search.empas.com/search/avi.html?q=">엠파스 비디오</option>
+                        <option value="http://www.yes24.com/home/searchend.asp?SID=cy4!Ge!xR58hbAQTTMRVRgCgFICgggx9ndWVzdxa*vNW21g&ptype=c&sortNo=3&WT=all&fword=">yes24
+                            영화</option>
+                        <option value="http://www.freehera.com/search.php?search=">프리헤라 영화</option>
+    
+                    </select>
+    
+                    <input type="text" name="query" size='23' style="height:20px; background-color:#FFFFFF; border:1 #333333 solid;  font-family: 굴림,Arial; font-size: 11px; color:#000000;"></td>
+                <td width="65"><INPUT type="image" src="/images/search.gif"></TD>
+            </form>
+        </TR>
+    </TABLE>
+</body>
+</html>
