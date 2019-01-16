@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <img class="pic1 animated bounceInDown delay-1s" src="pic1.png" alt="">
+    <img class="pic2 animated bounceInDown delay-2s" src="pic2.png" alt="">
+    <img class="pic3 animated bounceInRight" src="near.png" alt="">
+    <div class="container">
+        <div class="col-lg-2"></div>
+        <div>
+            <form name="searchforit" method="get" action="javascript:doSearch()">
+                <script src="script.js"></script>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <select class="category center-block" name="service">
+                            <option value="http://www.google.co.kr/search?q=">GOOGLE</option>
+                            <option value="http://search.naver.com/search.naver?where=nexearch&query=">NAVER</option>
+                            <option value="https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&sug=&sugo=&q=">DAUM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <div class="inp">
+                            <input type="text" name="query" id="inp" placeholder="&nbsp;">
+                            <span class="label">Search</span>
+                            <span class="border"></span>
+                            <input id="searchbutton" type="image" src="search.png">
+                            </div>
+                    </div>
+                </div>
+            </form>    
+            <div class="row">
+                <div class="col">
+                    <div class="leftleft">
+                        <a href="https://cafe.naver.com/sweecr"><img src="vlive.png" alt="" class="goto"></a>
+                        <a href="https://cafe.naver.com/sweecr"><p class="text">블랙핑크<br>공식카페</p></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="left">
+                        <a href="http://www.ygfamily.com/artist/Main.asp?LANGDIV=K&ATYPE=2&ARTIDX=70"><img src="yg.png" alt="" class="goto"></a>
+                        <a href="http://www.ygfamily.com/artist/Main.asp?LANGDIV=K&ATYPE=2&ARTIDX=70"><p class="text">블랙핑크<br>공식사이트</p></a>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <div class="right">
+                        <a href="https://blink.blackpinkofficial.com/"><img src="blink.jpeg" alt="" class="goto"></a>
+                        <a href="https://blink.blackpinkofficial.com/"><p class="text">블랙핑크<br>공식팬덤<br><strong>BLINK</strong></p></a>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <div class="rightright">
+                        <a href="https://www.instagram.com/BLACKPINKOFFICIAL/"><img src="instagram.png" alt="" class="goto"></a>
+                        <a href="https://www.instagram.com/BLACKPINKOFFICIAL/"><p class="text">블랙핑크<br>인스타그램</p></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+    <div class="footer">
+        copyright dimicactus all right reserved.
+    </div>
+</body>
+
+</html>
